@@ -1,7 +1,14 @@
+import { Switch, Route } from 'react-router-dom';
+import NotFound from './pages/NotFound';
+import HomePage from './pages/HomePage';
+import './styles/base.css';
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Switch>
+      <Route exact path="/"  component={ HomePage } />
+      <Route component={ NotFound } />
+    </Switch>
   );
 }
 
