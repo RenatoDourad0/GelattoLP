@@ -1,0 +1,22 @@
+.nav-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  width: fit-content;
+}
+
+.link {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding-right: 1em;
+}
+
+.link:hover {
+  color: #00ffff;
+}
+
+.link:active {
+  color: gray;
+}
