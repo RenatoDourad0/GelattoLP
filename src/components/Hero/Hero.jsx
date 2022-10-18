@@ -1,56 +1,65 @@
 import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-// import style from './Hero.module.css';
+import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import {
+  ButtonBack,
+  ButtonNext,
+  CarouselProvider,
+  Image,
+  Slide,
+  Slider,
+} from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import style from './Hero.module.css';
 
 export default function Hero() {
-  const [index, setIndex] = useState(0);
+  // https://github.com/express-labs/pure-react-carousel
+  const [slide, setSlide] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
-  
   return (
-    <Carousel
-      activeIndex={index}
-      onSelect={handleSelect}
-    >
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`}
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`}
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`}
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-  )
+    <section className={style['carousel-container']}>
+      <CarouselProvider
+        visibleSlides={1}
+        totalSlides={3}
+        step={1}
+        naturalSlideWidth={ window.innerWidth * 0.9 }
+        naturalSlideHeight={ window.innerHeight * 0.7 }
+        hasMasterSpinner
+        currentSlide={slide}
+        isPlaying
+        infinite={true}
+      >
+        <Slider >
+          <Slide
+            index={0} 
+            classNameHidden={ style["hidden-slide"]}
+            classNameVisible={ style['visible-slide']}
+          >
+            <Image src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`} />
+          </Slide>
+          <Slide
+            index={1} 
+            classNameHidden={ style["hidden-slide"]}
+            classNameVisible={ style['visible-slide']}
+          >
+            <Image src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`} />
+          </Slide>
+          <Slide
+            index={2} 
+            classNameHidden={ style["hidden-slide"]}
+            classNameVisible={ style['visible-slide']}
+          >
+            <Image src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`} />
+          </Slide>
+        </Slider>
+        <div className={ style['button-container'] }>
+          <ButtonBack className={ style.button }>
+            <ArrowBackIos className={ style.icon }/>
+          </ButtonBack>
+          <ButtonNext className={ style.button }>
+            <ArrowForwardIos className={ style.icon }/>
+          </ButtonNext>
+        </div>
+      </CarouselProvider>
+    </section>
+  );
 }

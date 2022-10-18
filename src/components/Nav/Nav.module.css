@@ -1,9 +1,9 @@
 .nav-container {
   display: flex;
+  max-width: 40%;
   flex-flow: row nowrap;
   align-items: baseline;
   justify-content: flex-end;
-  width: fit-content;
 }
 
 .link {

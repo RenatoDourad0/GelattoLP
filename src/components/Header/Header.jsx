@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <div className={ style['header-container'] }>
+    <section className={ style['header-container'] }>
       <div className={ style['info-container'] }>
         <img
           src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`} alt="logo"
@@ -24,6 +24,6 @@ export default function Header() {
       <div className={ style['hero-container'] }>
         <Hero />
       </div>
-    </div>
+    </section>
   )
 }

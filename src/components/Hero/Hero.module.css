@@ -1,3 +1,29 @@
-.hero-container {
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
 
+.button-container {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+
+.hidden-slide {
+  visibility: hidden;
+  width: 0;
+}
+
+.visible-slide {
+  visibility: visible;
+  width: 100%;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+}
+
+.icon {
+  color: white;
 }
