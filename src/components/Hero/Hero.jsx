@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import {
   ButtonBack,
@@ -13,42 +13,61 @@ import style from './Hero.module.css';
 
 export default function Hero() {
   // https://github.com/express-labs/pure-react-carousel
-  const [slide, setSlide] = useState(0);
+  const slide = 0;
 
   return (
     <section className={style['carousel-container']}>
       <CarouselProvider
         visibleSlides={1}
-        totalSlides={3}
+        totalSlides={4}
         step={1}
-        naturalSlideWidth={ window.innerWidth * 0.9 }
-        naturalSlideHeight={ window.innerHeight * 0.7 }
-        hasMasterSpinner
+        // hasMasterSpinner
         currentSlide={slide}
         isPlaying
         infinite={true}
+        className="carousel-provider"
+        naturalSlideWidth={1}
+        naturalSlideHeight={0.65}
       >
-        <Slider >
-          <Slide
-            index={0} 
-            classNameHidden={ style["hidden-slide"]}
-            classNameVisible={ style['visible-slide']}
-          >
-            <Image src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`} />
+        <Slider classNameTray={style['slider-container']}>
+          <Slide index={0}>
+            <Image
+              tag="div"
+              src={`${process.env.PUBLIC_URL}/assets/skate1.png`}
+              className={style['image-container']}
+              isBgImage={true}
+            >
+              <h2 className={ style['h2-text'] }>testetestestete</h2>
+            </Image>
           </Slide>
-          <Slide
-            index={1} 
-            classNameHidden={ style["hidden-slide"]}
-            classNameVisible={ style['visible-slide']}
-          >
-            <Image src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`} />
+          <Slide index={1}>
+            <Image
+              tag="div"
+              src={`${process.env.PUBLIC_URL}/assets/surf1.png`}
+              className={style['image-container']}
+              isBgImage={true}
+            >
+              <h2 className={ style['h2-text'] }>testetestestete</h2>
+            </Image>
           </Slide>
-          <Slide
-            index={2} 
-            classNameHidden={ style["hidden-slide"]}
-            classNameVisible={ style['visible-slide']}
-          >
-            <Image src={`${process.env.PUBLIC_URL}/assets/gelatto-text-filled-blue-edge.svg`} />
+          <Slide index={2}>
+            <Image
+              tag="div"
+              src={`${process.env.PUBLIC_URL}/assets/moto1.png`}
+              className={style['image-container']}
+            >
+              <h2 className={ style['h2-text'] }>testetestestete</h2>
+            </Image>
+          </Slide>
+          <Slide index={3}>
+            <Image
+              tag="div"
+              src={`${process.env.PUBLIC_URL}/assets/wake1.png`}
+              className={style['image-container']}
+              isBgImage={true}
+            >
+              <h2 className={ style['h2-text'] }>testetestestete</h2>
+            </Image>
           </Slide>
         </Slider>
         <div className={ style['button-container'] }>

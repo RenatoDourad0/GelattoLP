@@ -9,3 +9,46 @@ body {
   overflow-x: hidden;
 }
 
+/* header stiky component */
+
+.headroom {
+  background-color: black;
+  margin: 0;
+}
+
+.headroom--scrolled {
+  height: 14vh;
+}
+
+@media screen and (max-width: 430px) {
+  .headroom {
+    height: 9vh;
+  }
+
+  .headroom--scrolled {
+    height: 9vh;
+  }
+}
+
+/* header-hero-slider */
+.carousel__slide {
+  height: 100%;
+}
+
+.carousel-provider:nth-child(n) {
+  max-height: calc(86vh + 20px);
+}
+
+.carousel-provider {
+  max-height: calc(86vh + 20px);
+}
+
+@media screen and (max-width: 430px) {
+  .carousel-provider:nth-child(n) {
+    max-height: 31vh;
+  }
+  
+  .carousel-provider {
+    max-height: 31vh;
+  }
+}
